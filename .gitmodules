@@ -1,0 +1,12 @@
+[submodule "engines/xolotl"]
+	path = engines/xolotl
+	url = https://github.com/Indras-Mirror/Xolotl.git
+	shallow = true
+[submodule "engines/strata"]
+	path = engines/strata
+	url = https://github.com/Niko1221/Strata.git
+	shallow = true
+[submodule "engines/maya"]
+	path = engines/maya
+	url = https://github.com/mw00/project-maya.git
+	shallow = true

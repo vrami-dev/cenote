@@ -1,0 +1,98 @@
+{
+ "prose": [
+  {
+   "mode": "F",
+   "tok_s": 18.0,
+   "exp": null
+  },
+  {
+   "mode": "E",
+   "tok_s": 13.9,
+   "exp": null
+  },
+  {
+   "mode": "E",
+   "tok_s": 15.7,
+   "exp": null
+  },
+  {
+   "mode": "F",
+   "tok_s": 18.5,
+   "exp": null
+  },
+  {
+   "mode": "F",
+   "tok_s": 18.7,
+   "exp": null
+  },
+  {
+   "mode": "E",
+   "tok_s": 15.0,
+   "exp": null
+  }
+ ],
+ "code": [
+  {
+   "mode": "F",
+   "tok_s": 25.3,
+   "exp": null
+  },
+  {
+   "mode": "E",
+   "tok_s": 18.6,
+   "exp": null
+  },
+  {
+   "mode": "E",
+   "tok_s": 21.8,
+   "exp": null
+  },
+  {
+   "mode": "F",
+   "tok_s": 27.0,
+   "exp": null
+  },
+  {
+   "mode": "F",
+   "tok_s": 27.7,
+   "exp": null
+  },
+  {
+   "mode": "E",
+   "tok_s": 20.1,
+   "exp": null
+  }
+ ],
+ "agent": [
+  {
+   "mode": "F",
+   "tok_s": 23.3,
+   "exp": null
+  },
+  {
+   "mode": "E",
+   "tok_s": 17.7,
+   "exp": null
+  },
+  {
+   "mode": "E",
+   "tok_s": 18.7,
+   "exp": null
+  },
+  {
+   "mode": "F",
+   "tok_s": 22.1,
+   "exp": null
+  },
+  {
+   "mode": "F",
+   "tok_s": 24.0,
+   "exp": null
+  },
+  {
+   "mode": "E",
+   "tok_s": 18.3,
+   "exp": null
+  }
+ ]
+}

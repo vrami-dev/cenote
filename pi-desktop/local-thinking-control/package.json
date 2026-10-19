@@ -1,0 +1,11 @@
+{
+ "name": "local-thinking-control",
+ "version": "1.0.0",
+ "type": "module",
+ "private": true,
+ "pi": {
+  "extensions": [
+   "index.mjs"
+  ]
+ }
+}

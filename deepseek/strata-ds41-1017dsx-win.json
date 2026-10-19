@@ -1,0 +1,66 @@
+{
+ "_comment": "cenote: DeepSeek-V4.1-Flash-1017 (lxe's dsx 2-bit build, its 4 shards merged into one GGUF with engines/xolotl/tools/xolotl/gguf_merge_shards.py, expert-rank.json converted with scripts/rank_json_to_bin.py), the official 1017 Engram shards read in place, IndrasMirror's 1017 DSpark draft (Q2_K) and tokenizer files in the same folder. Tuned on an RTX 3090 + 128 GB: 72 GiB pinned arena, STRATA_TIER_BATCH_PCIE=0.75. Routing: the plain model name decodes with the light nudge (0.25 / 0.15); -fast = 0.5 / 0.3; -exact = no nudge. STRATA_RB_SMART=1 enables the per-request route_protect / route_pool keys and the route meter. Edit every D:\\ path for your machine.",
+ "exe": "D:\\cenote\\engines\\xolotl\\build-win\\ds41_generate.exe",
+ "args": [
+  "-m",
+  "D:/models/dsv41-1017-dsx/DeepSeek-V4.1-Flash-1017-dsx-2bit.gguf",
+  "--backend",
+  "cuda",
+  "--experts",
+  "gpu",
+  "--engram",
+  "D:\\models\\dsv41-1017-engram",
+  "--rank",
+  "D:/models/dsv41-1017-dsx/rank-dsx.bin",
+  "--ctx",
+  "262144",
+  "--stop",
+  "1",
+  "--arena-adapt",
+  "--kv-fp4",
+  "--route-bias",
+  "0.25",
+  "--route-bias-file",
+  "0.15",
+  "--arena-gib",
+  "72",
+  "--prompt-batch",
+  "12288"
+ ],
+ "env": {
+  "GGML_NO_BACKTRACE": "1",
+  "STRATA_NO_LARGEPAGES": "1",
+  "STRATA_SERVE_STEP_MAX": "96",
+  "STRATA_SERVE_PASS_BIAS": "0",
+  "STRATA_DSPARK_DEPTH": "4",
+  "STRATA_DSPARK_CONF": "0.6",
+  "STRATA_SERVE_LOOKUP": "14",
+  "STRATA_SERVE_DSPARK_EVICT": "4096",
+  "STRATA_DENSE_REQUANT": "q6_K",
+  "STRATA_PRESTAGE_GIB": "1.5",
+  "STRATA_TIER_BATCH_PCIE": "0.75",
+  "STRATA_SERVE_DSPARK": "D:/models/dsv41-1017-dsx/V41-MTP-Vision-1017.Q2_K.gguf",
+  "STRATA_DSPARK_KEEP": "D:/cenote/engines/xolotl/tools/v41/serve/dspark_expert_counts.txt:64",
+  "STRATA_TEXT_LOG": "0",
+  "STRATA_RB_SMART": "1"
+ },
+ "lib_dirs": [
+  "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin"
+ ],
+ "cwd": "D:\\cenote\\engines\\xolotl",
+ "tokenizer": "D:\\models\\dsv41-1017-dsx",
+ "model_name": "deepseek-v4.1-flash-xolotl",
+ "log": "D:\\models\\strata-ds41.log",
+ "port": 8150,
+ "host": "127.0.0.1",
+ "gpu": 0,
+ "sampling": {
+  "temperature": 1,
+  "top_p": 0.95
+ },
+ "reasoning_budget_tokens": 32768,
+ "aliases": [
+  "deepseek-v4.1-flash-xolotl-exact",
+  "deepseek-v4.1-flash-xolotl-fast"
+ ]
+}

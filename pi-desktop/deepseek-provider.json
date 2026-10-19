@@ -1,0 +1,65 @@
+{
+ "permissions": [
+  "agent.extension",
+  "provider.register"
+ ],
+ "contributes": {
+  "providers": [
+   {
+    "id": "localDeepseek",
+    "name": "Local DeepSeek-V4.1-Flash-1017 (Xolotl)",
+    "description": "DeepSeek-V4.1-Flash-1017 on this PC (scripts/start-deepseek.cmd, port 8150). No API key.",
+    "authKind": "none",
+    "apiStyle": "chat_completions",
+    "baseUrl": "http://127.0.0.1:8150/v1",
+    "models": [
+     {
+      "id": "deepseek-v4.1-flash-xolotl",
+      "name": "DeepSeek-V4.1-Flash-1017 (local)",
+      "contextWindow": 262144,
+      "maxTokens": 32768,
+      "supportsImages": false,
+      "thinkingLevels": [
+       "off",
+       "low",
+       "medium",
+       "high",
+       "max"
+      ],
+      "defaultThinkingLevel": "high"
+     },
+     {
+      "id": "deepseek-v4.1-flash-xolotl-fast",
+      "name": "DeepSeek-V4.1-Flash-1017 fast (local, speed mode)",
+      "contextWindow": 262144,
+      "maxTokens": 32768,
+      "supportsImages": false,
+      "thinkingLevels": [
+       "off",
+       "low",
+       "medium",
+       "high",
+       "max"
+      ],
+      "defaultThinkingLevel": "high"
+     },
+     {
+      "id": "deepseek-v4.1-flash-xolotl-exact",
+      "name": "DeepSeek-V4.1-Flash-1017 exact (local, quality mode)",
+      "contextWindow": 262144,
+      "maxTokens": 32768,
+      "supportsImages": false,
+      "thinkingLevels": [
+       "off",
+       "low",
+       "medium",
+       "high",
+       "max"
+      ],
+      "defaultThinkingLevel": "high"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-labelledby="t d">
+  <title id="t">Where the experts live</title>
+  <desc id="d">GPU: dense weights and about 14.9 GiB of hot expert slots. Pinned RAM arena, 72 GiB: 7,950 experts. NVMe: the other 7,410 experts, read unbuffered. Each token routes 6 experts per layer.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4D6BFE"/><stop offset="1" stop-color="#3b55d8"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2b3550"/><stop offset="1" stop-color="#232b40"/></linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1a1f2b"/><stop offset="1" stop-color="#151922"/></linearGradient>
+  </defs>
+  <rect width="1200" height="380" rx="14" fill="#0b0e14"/>
+  <g font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="40" y="52" font-size="22" font-weight="700" fill="#f2f3f5">where the experts live</text>
+    <text x="40" y="80" font-size="15" fill="#8a92a3">hottest at the top, coldest at the bottom. each token picks 6 experts in each of 40 layers.</text>
+
+    <!-- tier 1: GPU -->
+    <rect x="40" y="108" width="400" height="60" rx="8" fill="url(#g1)"/>
+    <text x="60" y="137" font-size="17" font-weight="700" fill="#ffffff">GPU · RTX 3090, 24 GB</text>
+    <text x="60" y="158" font-size="14" fill="#dfe6ff">dense weights (q6_K, 5.86 GB) + 14.9 GiB of hot experts</text>
+    <text x="470" y="137" font-size="16" fill="#c9ced8">expert lookups from VRAM: 81% light, 88% fast, 59% exact</text>
+    <text x="470" y="158" font-size="14" fill="#7c8494">decode, medians of 6 requests per mode (bench/results)</text>
+
+    <!-- tier 2: RAM arena -->
+    <rect x="40" y="184" width="560" height="60" rx="8" fill="url(#g2)" stroke="#4D6BFE" stroke-opacity="0.35"/>
+    <text x="60" y="213" font-size="17" font-weight="700" fill="#e6e9ef">pinned RAM arena · 72 GiB</text>
+    <text x="60" y="234" font-size="14" fill="#aab3c5">7,950 experts, copied to the GPU over PCIe 4.0 x16 (~26 GB/s)</text>
+    <text x="630" y="213" font-size="16" fill="#c9ced8">misses go over PCIe or run on the CPU</text>
+    <text x="630" y="234" font-size="14" fill="#7c8494">STRATA_TIER_BATCH_PCIE=0.75: 75% of batched misses over PCIe</text>
+
+    <!-- tier 3: NVMe -->
+    <rect x="40" y="260" width="800" height="60" rx="8" fill="url(#g3)" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="60" y="289" font-size="17" font-weight="700" fill="#d3d7df">NVMe · 148.1 GB model file</text>
+    <text x="60" y="310" font-size="14" fill="#8a92a3">the other 7,410 experts, read unbuffered (FILE_FLAG_NO_BUFFERING)</text>
+    <text x="870" y="289" font-size="16" fill="#c9ced8">the route bias nudges picks</text>
+    <text x="870" y="310" font-size="14" fill="#7c8494">toward VRAM, away from disk</text>
+
+    <text x="40" y="352" font-size="13" fill="#5d6574">DeepSeek-V4.1-Flash-1017, lxe's dsx 2-bit build, on a Ryzen 7 5800X with 128 GB DDR4-3200 and a Samsung 990 EVO Plus.</text>
+  </g>
+</svg>

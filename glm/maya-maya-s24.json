@@ -1,0 +1,48 @@
+{
+ "_comment": "cenote: the config the test rig runs for GLM-5.3-Flash Maya-S24 on Project Maya 1.1.15, port 8090, 128K context, vision. Paths assume Maya at D:\\project-maya-1.1.15 and models under D:\\Maya-models; edit them.",
+ "exe": "D:\\project-maya-1.1.15\\build\\strata.exe",
+ "args": [
+  "--glm-pack",
+  "D:\\Maya-models\\Maya-S24\\pack",
+  "--max-context",
+  "131072",
+  "--expert-cache",
+  "auto",
+  "--prefill",
+  "auto",
+  "--kv-streaming",
+  "on",
+  "--expert-profile",
+  "D:\\project-maya-1.1.15\\data\\expert-profile-glm.bin"
+ ],
+ "cwd": "D:\\project-maya-1.1.15",
+ "tokenizer": "D:\\Maya-models\\Maya-S24\\pack\\tokenizer",
+ "model_name": "glm-5.3-flash",
+ "gpu": [
+  0
+ ],
+ "sampling": {
+  "temperature": 1.0,
+  "top_p": 0.95
+ },
+ "reasoning_effort": "high",
+ "lib_dirs": [
+  "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin"
+ ],
+ "port": 8090,
+ "vision": {
+  "exe": "D:\\project-maya-1.1.15\\build-vision\\bin\\strata-vision.exe",
+  "mmproj": "D:\\Maya-models\\Maya-S24\\vision\\mmproj-GLM-5.3-Flash-F16.gguf",
+  "model": "D:\\Maya-models\\Maya-S24\\vision\\GLM-5.3-Flash-vocab.gguf",
+  "gpu": true
+ },
+ "log": "D:\\project-maya-1.1.15\\maya-maya-s24.log",
+ "installer": {
+  "models_dir": "D:\\Maya-models",
+  "quant": "Maya-S24",
+  "gguf": null,
+  "gguf_dir": null,
+  "draft": "mtp",
+  "written": "2026-10-17 21:14"
+ }
+}

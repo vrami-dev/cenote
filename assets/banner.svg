@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-labelledby="t d">
+  <title id="t">cenote</title>
+  <desc id="d">DeepSeek-V4.1-Flash on one RTX 3090, native Windows. Engine: Xolotl by Indras Mirror, built on Strata and ggml.</desc>
+  <defs>
+    <radialGradient id="bg" cx="78%" cy="55%" r="75%">
+      <stop offset="0" stop-color="#121826"/>
+      <stop offset="0.55" stop-color="#0b0e14"/>
+      <stop offset="1" stop-color="#07080b"/>
+    </radialGradient>
+    <radialGradient id="water" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#9fb1ff" stop-opacity="1"/>
+      <stop offset="0.35" stop-color="#4D6BFE" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#4D6BFE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#4D6BFE" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4D6BFE" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shaft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4D6BFE"/>
+      <stop offset="1" stop-color="#4D6BFE" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="400" fill="url(#bg)"/>
+
+  <!-- faint strata lines: the layers the model is tiered across -->
+  <g stroke="#ffffff" stroke-opacity="0.035" fill="none" stroke-width="1">
+    <path d="M0 318 C 220 300, 420 336, 640 320 S 1060 300, 1280 322"/>
+    <path d="M0 342 C 240 328, 460 360, 700 344 S 1080 326, 1280 348"/>
+    <path d="M0 366 C 260 352, 500 384, 740 368 S 1100 352, 1280 372"/>
+  </g>
+
+  <!-- the cenote: rings narrowing down to lit water -->
+  <ellipse cx="1010" cy="232" rx="230" ry="120" fill="url(#glow)"/>
+  <g fill="none" stroke-width="1.4">
+    <ellipse cx="1010" cy="196" rx="232" ry="92" stroke="#3a404c" stroke-opacity="0.55"/>
+    <ellipse cx="1010" cy="203" rx="205" ry="81" stroke="#3d4454" stroke-opacity="0.6"/>
+    <ellipse cx="1010" cy="210" rx="178" ry="70" stroke="#40495c" stroke-opacity="0.65"/>
+    <ellipse cx="1010" cy="217" rx="151" ry="59" stroke="#434f6a" stroke-opacity="0.7"/>
+    <ellipse cx="1010" cy="224" rx="124" ry="48" stroke="#45558a" stroke-opacity="0.75"/>
+    <ellipse cx="1010" cy="231" rx="98" ry="38" stroke="#4a5fb6" stroke-opacity="0.8"/>
+    <ellipse cx="1010" cy="238" rx="73" ry="28" stroke="#4D6BFE" stroke-opacity="0.85"/>
+  </g>
+  <polygon points="944,0 992,0 1032,246 990,246" fill="url(#shaft)"/>
+  <ellipse cx="1010" cy="246" rx="52" ry="18" fill="url(#water)"/>
+  <ellipse cx="1010" cy="246" rx="16" ry="5" fill="#dfe6ff" fill-opacity="0.9"/>
+
+  <!-- wordmark -->
+  <text x="88" y="190" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="118" font-weight="700" letter-spacing="-3" fill="#f2f3f5">cenote</text>
+  <rect x="92" y="214" width="300" height="3" fill="url(#rule)"/>
+  <text x="92" y="258" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="27" fill="#c9ced8">frontier open models on one RTX 3090. native windows.</text>
+  <text x="92" y="296" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="600" fill="#7f97ff">DeepSeek-V4.1-Flash-1017 <tspan fill="#59606e" font-weight="400">·</tspan> GLM-5.3-Flash <tspan fill="#59606e" font-weight="400">·</tspan> Swift 1.5</text>
+  <text x="92" y="330" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" fill="#7c8494">engines: Xolotl · Project Maya · Strata · all on ggml / llama.cpp</text>
+</svg>
