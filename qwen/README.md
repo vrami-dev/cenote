@@ -1,6 +1,8 @@
-# Swift 1.5 / Qwen3.8-Flash-Next on Strata 0.1.45
+# Qwen3.8-Flash-Next (Swift 1.5) on Strata 0.1.45
 
-The daily driver on the test rig: fast, 262K context, vision.
+The daily driver on the test rig: fast, 262K context, vision. It runs Qwen3.8-Flash-Next as Swift 1.5, UkisAI's
+fine-tune that cuts the base model's overthinking (63.4% fewer thinking tokens on GPQA-Diamond per its card, at about
+the same score).
 
 | | |
 | --- | --- |

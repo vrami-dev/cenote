@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <b>DeepSeek-V4.1-Flash-1017, GLM-5.3-Flash and Swift 1.5 on one RTX 3090 with 128 GB of RAM, natively on Windows 11.</b><br>
+  <b>DeepSeek-V4.1-Flash-1017, GLM-5.3-Flash and Qwen3.8-Flash-Next on one RTX 3090 with 128 GB of RAM, natively on Windows 11.</b><br>
   The configs, launchers, test harness, raw results and lessons from one real rig.
 </p>
 
@@ -21,7 +21,7 @@
 | --- | --- | --- | --- | --- | --- |
 | [DeepSeek-V4.1-Flash-1017](#deepseek-v41-flash-1017) | dsx 2-bit by lxe, 148.1 GB | [Xolotl](https://github.com/Indras-Mirror/Xolotl) | 8150 | **19.1 tok/s** light · 21.7 fast · 9.7 exact | 209.5 tok/s (13K prompt, September build) |
 | [GLM-5.3-Flash](glm/README.md) | Maya-S24 by peasantsmith, 94.7 GB | [Project Maya](https://github.com/mw00/project-maya) 1.1.15 | 8090 | **16.9-17.8 tok/s** | 1,121 tok/s (115K prompt) |
-| [Swift 1.5](qwen/README.md) (Qwen3.8-Flash-Next) | IQ3_S GSQ-RCO by ukisai, 83.7 GB | [Strata](https://github.com/Niko1221/Strata) 0.1.45 | 8080 | **92-102 tok/s** | 2,256 tok/s (16K prompt) |
+| [Qwen3.8-Flash-Next](qwen/README.md), as UkisAI's Swift 1.5 fine-tune | IQ3_S GSQ-RCO by ukisai, 83.7 GB | [Strata](https://github.com/Niko1221/Strata) 0.1.45 | 8080 | **92-102 tok/s** | 2,256 tok/s (16K prompt) |
 
 One model at a time: each needs most of the GPU and between 59 and 93 GB of RAM. Method and raw data:
 [docs/BENCHMARKS.md](docs/BENCHMARKS.md).
@@ -44,6 +44,9 @@ The engines are other people's work (credits below). These parts are ours:
   Windows from the official checkpoint, and the tuned config.
 - **A test method that holds up on a desktop PC:** one server, every mode switched per request, rotation and reverse.
   The harness and every raw result are in [bench/](bench/).
+- **A dashboard that says what is running:** the model and its routing mode in the top bar and on the Monitor, so every
+  screenshot is a receipt. Open upstream as [Xolotl #13](https://github.com/Indras-Mirror/Xolotl/pull/13) and
+  [Strata #3142](https://github.com/Niko1221/Strata/pull/3142).
 - **A Pi Desktop extension** that maps Pi's thinking levels to each local server and registers DeepSeek as a provider
   ([pi-desktop/](pi-desktop/)).
 
@@ -86,7 +89,7 @@ Setup: [deepseek/SETUP.md](deepseek/SETUP.md).
 git clone --recurse-submodules https://github.com/vrami-dev/cenote D:\cenote
 ```
 
-Then follow the page for the model you want: [DeepSeek](deepseek/SETUP.md) · [GLM](glm/README.md) · [Swift](qwen/README.md).
+Then follow the page for the model you want: [DeepSeek](deepseek/SETUP.md) · [GLM](glm/README.md) · [Qwen3.8-Flash-Next](qwen/README.md).
 Start one with `scripts\start-deepseek.cmd`, `scripts\start-glm.cmd` or `scripts\start-swift.cmd`; each refuses to start
 while another model is serving. `python scripts\stop-all.py` stops whichever one runs.
 
@@ -96,7 +99,7 @@ while another model is serving. `python scripts\stop-all.py` stops whichever one
 | --- | --- |
 | [deepseek/](deepseek/) | the tuned 1017 config and the setup guide |
 | [glm/](glm/) | the Maya-S24 config and notes |
-| [qwen/](qwen/) | the Swift configs (stock and SC117's abliterated) and notes |
+| [qwen/](qwen/) | the Qwen3.8-Flash-Next configs (Swift 1.5, stock and SC117's abliterated) and notes |
 | [scripts/](scripts/) | launchers, the one-model guard, `stop-all.py`, the expert-rank converter |
 | [bench/](bench/) | the routing-modes harness and every raw result |
 | [pi-desktop/](pi-desktop/) | the thinking-level extension and the DeepSeek provider block |
@@ -117,7 +120,7 @@ The short version of [docs/LESSONS.md](docs/LESSONS.md):
 | Project | By | Used for |
 | --- | --- | --- |
 | [Xolotl](https://github.com/Indras-Mirror/Xolotl) | Indras Mirror | the DeepSeek-V4.1 engine and server |
-| [Strata](https://github.com/Niko1221/Strata) | Niko1221 | the Swift / Qwen engine; the base Xolotl and Maya build on |
+| [Strata](https://github.com/Niko1221/Strata) | Niko1221 | the Qwen3.8-Flash-Next engine; the base Xolotl and Maya build on |
 | [Project Maya](https://github.com/mw00/project-maya) | mw00 | the GLM-5.3-Flash engine |
 | [ggml / llama.cpp](https://github.com/ggml-org/llama.cpp) | ggml-org | the kernels under all three |
 | [DeepSeek-V4.1-Flash-1017](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017) | DeepSeek | the model and its prompt encoder |
@@ -126,7 +129,7 @@ The short version of [docs/LESSONS.md](docs/LESSONS.md):
 | [GLM-5.3-Flash](https://huggingface.co/zai-org/GLM-5.3-Flash) | Zhipu AI | the model |
 | [Maya quants](https://huggingface.co/peasantsmith/GLM-5.3-Flash-Maya-GGUF) | peasantsmith | Maya-S24 |
 | [Qwen3.8-Flash-Next](https://huggingface.co/Qwen/Qwen3.8-Flash-Next) | Qwen | the base model |
-| [Swift 1.5](https://huggingface.co/ukisai/Swift-1.5-Qwen3.8-Flash-Next-GSQ-RCO-GGUF) | UkisAI | the fine-tune and its IQ3_S quant |
+| [Swift 1.5](https://huggingface.co/ukisai/Swift-1.5-Qwen3.8-Flash-Next-GSQ-RCO-GGUF) | UkisAI | the Qwen3.8-Flash-Next fine-tune we run, and its IQ3_S quant |
 | [Swift 1.5 abliterated](https://huggingface.co/SC117/Swift-1.5-Qwen3.8-Flash-Next-GSQ-RCO-abliterated-GGUF) | SC117 | the uncensored variant |
 | [colibri](https://github.com/JustVugg/colibri) | JustVugg | the pool-window routing rule |
 | [arXiv:2412.00099](https://arxiv.org/abs/2412.00099) | Qualcomm AI Research | cache-aware routing, the reference for the next step |

@@ -54,6 +54,6 @@
   <text x="88" y="190" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="118" font-weight="700" letter-spacing="-3" fill="#f2f3f5">cenote</text>
   <rect x="92" y="214" width="300" height="3" fill="url(#rule)"/>
   <text x="92" y="258" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="27" fill="#c9ced8">frontier open models on one RTX 3090. native windows.</text>
-  <text x="92" y="296" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="600" fill="#7f97ff">DeepSeek-V4.1-Flash-1017 <tspan fill="#59606e" font-weight="400">·</tspan> GLM-5.3-Flash <tspan fill="#59606e" font-weight="400">·</tspan> Swift 1.5</text>
+  <text x="92" y="296" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="600" fill="#7f97ff">DeepSeek-V4.1-Flash-1017 <tspan fill="#59606e" font-weight="400">·</tspan> GLM-5.3-Flash <tspan fill="#59606e" font-weight="400">·</tspan> Qwen3.8-Flash-Next</text>
   <text x="92" y="330" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="16" fill="#7c8494">engines: Xolotl · Project Maya · Strata · all on ggml / llama.cpp</text>
 </svg>

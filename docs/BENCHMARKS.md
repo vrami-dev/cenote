@@ -59,7 +59,7 @@ Raw: [round2](../bench/results/2026-10-18-september-round2.jsonl), [round3](../b
 Maya's own 16-test function suite run against the server: decode 17.6 / 16.9 / 17.8 tok/s on three stories; 30K prompt
 at 1,182 tok/s; 115K prompt in 99.3 s; cached follow-up 2.2 s; back to a parked 115K conversation 3.7 s; 15 of 16 passed.
 
-## Swift 1.5 (Strata 0.1.45, elastic VRAM)
+## Qwen3.8-Flash-Next as Swift 1.5 (Strata 0.1.45, elastic VRAM)
 
 Two runs: story 94.8 / 94.2 tok/s, code 102.2 / 101.7, document summary 95.1 / 92.6, fresh 16K prompt 2,256 / 2,249
 tok/s. 116,201-token prompt in 47.3 s. Strata's 17-test suite 17/17, vision 4/4. Against Strata 0.1.41 interleaved on

@@ -1,5 +1,5 @@
 @echo off
-title Swift 1.5 (Qwen3.8-Flash-Next fine-tune, Strata 0.1.45) - port 8080
+title Qwen3.8-Flash-Next (Swift 1.5 fine-tune, Strata 0.1.45) - port 8080
 rem One model at a time. Set STRATA_DIR if Strata 0.1.45 is not unpacked at D:\strata-0.1.45.
 python "%~dp0guard.py" || (pause & exit /b 1)
 if "%STRATA_DIR%"=="" set "STRATA_DIR=D:\strata-0.1.45"
