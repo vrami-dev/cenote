@@ -50,6 +50,7 @@
  "cwd": "D:\\cenote\\engines\\xolotl",
  "tokenizer": "D:\\models\\dsv41-1017-dsx",
  "model_name": "deepseek-v4.1-flash-xolotl",
+ "display_name": "DeepSeek-V4.1-Flash-1017 · dsx 2-bit",
  "log": "D:\\models\\strata-ds41.log",
  "port": 8150,
  "host": "127.0.0.1",
